@@ -22,3 +22,14 @@ infrastructure as code, and cloud deployment.
 ## Fun Fact
 
 I love exploring new technologies and solving puzzles.
+
+
+## My Week 2 Infrastructure
+
+ 
+
+Runner VM: lode-runner
+
+Runner IP: 192.168.1.170
+
+Pipeline status: [![Hello Pipeline](https://github.com/Glode968/cis-410-cybersecurity-automation/actions/workflows/hello-pipeline.yml/badge.svg)](https://github.com/Glode968/cis-410-cybersecurity-automation/actions/workflows/hello-pipeline.yml)
