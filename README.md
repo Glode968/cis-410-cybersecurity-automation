@@ -23,10 +23,7 @@ infrastructure as code, and cloud deployment.
 
 I love exploring new technologies and solving puzzles.
 
-
 ## My Week 2 Infrastructure
-
- 
 
 Runner VM: lode-runner
 
