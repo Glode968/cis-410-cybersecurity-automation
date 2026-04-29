@@ -1,3 +1,22 @@
+# .github/workflows/setup-prod.yml
+# ─────────────────────────────────────────────────────────────────────────────
+# ONE-TIME: configures passwordless sudo and installs Docker on yourname-prod.
+# Trigger: manual (workflow_dispatch) — run ONCE after provisioning the VM.
+# Never runs automatically. Never run again unless you rebuild the VM.
+#
+# No Docker required on yourname-runner — uses native ssh only.
+#
+# REQUIRED GITHUB SECRETS:
+#   PROD_HOST    — IP address of yourname-prod
+#   PROD_USER    — SSH username (e.g. student)
+#   PROD_SSH_KEY — SSH private key (full contents of deploy_key_prod)
+#   SUDO_PASS    — sudo password for PROD_USER on yourname-prod
+#
+# env: SSH_KEY passes the multi-line private key through an environment variable
+# instead of inline ${{ secrets.* }} — this preserves newlines and PEM headers
+# correctly. Using secrets inline in run: strips newlines causing 'invalid format'.
+# ─────────────────────────────────────────────────────────────────────────────
+
 name: "Setup — Production Server"
 
 on:

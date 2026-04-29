@@ -1,3 +1,21 @@
+# .github/workflows/setup-staging.yml
+# ─────────────────────────────────────────────────────────────────────────────
+# ONE-TIME: configures passwordless sudo and installs Docker on yourname-staging.
+# Trigger: manual (workflow_dispatch) — run ONCE after provisioning the VM.
+# Never runs automatically. Never run again unless you rebuild the VM.
+#
+# No Docker required on yourname-runner — uses native ssh only.
+#
+# REQUIRED GITHUB SECRETS:
+#   STAGING_HOST    — IP address of yourname-staging
+#   STAGING_USER    — SSH username (e.g. student)
+#   STAGING_SSH_KEY — SSH private key (full contents of deploy_key_staging)
+#   SUDO_PASS       — sudo password for STAGING_USER on yourname-staging
+#
+# env: SSH_KEY passes the multi-line private key through an environment variable
+# instead of inline ${{ secrets.* }} — this preserves newlines and PEM headers
+# correctly. Using secrets inline in run: strips newlines causing 'invalid format'.
+# ─────────────────────────────────────────────────────────────────────────────
 
 name: "Setup — Staging Server"
 

@@ -1,3 +1,18 @@
+# .github/workflows/deploy-staging.yml
+# ─────────────────────────────────────────────────────────────────────────────
+# Deploys the Flask app to yourname-staging as a Docker container on port 5001.
+# Trigger: manual (workflow_dispatch) only — never auto-deploys.
+# Assumes: Docker is already installed (by setup-staging.yml, run once before this).
+#
+# No Docker required on yourname-runner — uses native ssh and scp only.
+#
+# env: SSH_KEY passes the multi-line private key through an environment variable
+# instead of inline ${{ secrets.* }} — this preserves newlines and PEM headers
+# correctly. Using secrets inline in run: strips newlines causing 'invalid format'.
+#
+# PROMOTION GATE: You must manually trigger this workflow.
+# Every run creates an audit trail entry showing who deployed, when, and why.
+# ─────────────────────────────────────────────────────────────────────────────
 
 name: "Deploy — Staging"
 
