@@ -21,7 +21,7 @@ infrastructure as code, and cloud deployment.
 
 ## Fun Fact
 
-I love exploring new technologies and solving puzzles and play soccer.
+I love exploring new technologies and solving puzzles and play soccer updated.
 
 ## My Week 2 Infrastructure
 
