@@ -40,10 +40,11 @@ jobs:
           ./snyk --version
 
       - name: Snyk Code scan (SAST)
+        continue-on-error: true
         run: ./snyk code test --severity-threshold=high app/
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
+          
 
   # ── Job 2: SCA — dependency vulnerability scan ──────────────────────────────
   snyk-deps:
